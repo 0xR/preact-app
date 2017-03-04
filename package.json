@@ -5,8 +5,10 @@
   "dependencies": {
     "preact": "^7.2.0",
     "preact-compat": "^3.13.1",
+    "promise-polyfill": "^6.0.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "unfetch": "^2.1.2"
   },
   "devDependencies": {
     "eslint": "^3.17.0",
@@ -19,14 +21,16 @@
     "prettier": "^0.21.0",
     "react-app-rewire-sass": "^1.2.2",
     "react-app-rewired": "^0.6.5",
-    "react-scripts": "0.9.3"
+    "react-scripts": "0.9.3",
+    "webpack-bundle-analyzer": "^2.3.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "lint": "eslint --cache --fix .",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "bundle": "react-app-rewired build"
   },
   "resolutions": {
     "eslint": "3.17.0",

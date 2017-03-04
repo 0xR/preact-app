@@ -1,5 +1,8 @@
 /* eslint-disable no-param-reassign */
 const rewireSass = require('react-app-rewire-sass');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const target = process.env.npm_lifecycle_event;
 
 /* config-overrides.js */
 module.exports = function override(config, env) {
@@ -14,6 +17,17 @@ module.exports = function override(config, env) {
       'react-dom': 'preact-compat',
     },
   };
+
+  config.entry = config.entry.map(e => {
+    if (e.indexOf('polyfills') !== -1) {
+      return require.resolve('./src/polyfills.js');
+    }
+    return e;
+  });
+
+  if (target === 'bundle') {
+    config.plugins.push(new BundleAnalyzerPlugin());
+  }
 
   return config;
 };
