@@ -17,7 +17,8 @@
       "error",
       {
         "devDependencies": [
-          "**/config-overrides.js"
+          "**/config-overrides.js",
+          "**/*test.js"
         ]
       }
     ],
