@@ -28,6 +28,8 @@
         "trailingComma": "all",
         "singleQuote": true
       }
-    ]
+    ],
+    "react/no-deprecated": "off"
+
   }
 }
